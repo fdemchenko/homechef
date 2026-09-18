@@ -3,6 +3,7 @@ __pycache__/
 api/.env
 api/media/*
 !api/media/.gitkeep
+!api/media/PHOTO_CREDITS.md
 node_modules/
 dist/
 .claude/

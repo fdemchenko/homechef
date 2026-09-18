@@ -44,26 +44,10 @@ the site. The startup banner prints the address to share:
   on the network http://192.168.0.106:5173
 ```
 
-Visiting by IP always works. Visiting by hostname works for this machine's own
-name (`vite.config.ts` lists it in `server.allowedHosts`); any other name is
-refused, which is Vite's protection against DNS rebinding.
-
-To keep a session private, put the servers back on localhost:
 
 ```bash
 make dev API_HOST=127.0.0.1 WEB_HOST=127.0.0.1
 ```
-
-**Before you share the address, know what you are exposing.** There is no HTTPS,
-so the admin token travels the network in clear text and anyone on the same
-Wi-Fi could read it and gain full admin rights. The API and its `/docs` page are
-exposed on port 8000 too. This is fine for showing a friend on your home
-network; it is not fine on café Wi-Fi, and it is not a way to put the site on
-the internet.
-
-`make setup` is safe to re-run: it skips the venv and `node_modules` if they
-exist, and never overwrites an `api/.env` you already have.
-
 ## Logging in as admin
 
 Open http://localhost:5173/admin/login and paste the `ADMIN_TOKEN` from

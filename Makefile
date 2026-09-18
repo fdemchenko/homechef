@@ -1,4 +1,4 @@
-.PHONY: help setup env db seed api web dev build stop clean reset-db token
+.PHONY: help setup env db seed seed-french api web dev build stop clean reset-db token
 
 VENV    := .venv
 PY      := $(VENV)/bin/python
@@ -55,6 +55,9 @@ db: ## Start MySQL in Docker and wait until it is ready
 
 seed: setup db ## Put three sample recipes into an empty database
 	cd api && ../$(PY) seed.py
+
+seed-french: setup db ## Add three French recipes, in Ukrainian, with photos
+	cd api && ../$(PY) seed_french.py
 
 api: setup db ## API only, with reload, on :8000
 	cd api && ../$(UVICORN) main:app --reload --host $(API_HOST) --port 8000
