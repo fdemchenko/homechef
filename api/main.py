@@ -48,7 +48,7 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(title="Coocker API", lifespan=lifespan)
+app = FastAPI(title="HomeChef API", lifespan=lifespan)
 
 # The Vite dev server proxies /api and /media, so this is only a safety net
 # for when you open the frontend without the proxy.

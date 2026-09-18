@@ -1,4 +1,4 @@
-# Coocker
+# HomeChef
 
 My recipes, with photos, public reviews and star ratings.
 

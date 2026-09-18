@@ -49,7 +49,7 @@ export default function App() {
               🍳
             </span>
             <span className="font-display text-xl font-semibold tracking-tight">
-              Coocker
+              HomeChef
             </span>
           </Link>
           <Nav />

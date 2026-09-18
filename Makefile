@@ -12,7 +12,7 @@ WEB_HOST ?= 0.0.0.0
 LAN_IP    = $(shell hostname -I 2>/dev/null | awk '{print $$1}')
 
 help: ## Show this help
-	@echo "Coocker - my recipes, your reviews"
+	@echo "HomeChef - my recipes, your reviews"
 	@echo
 	@grep -hE '^[a-z-]+:.*##' $(MAKEFILE_LIST) \
 		| sed 's/:.*##/|/' \
@@ -80,7 +80,7 @@ build: setup ## Type-check and build the frontend for production
 # ---------- housekeeping ----------
 
 db-cli: db ## Open a MySQL shell on the database
-	docker compose exec db mysql -ucoocker -pcoocker --default-character-set=utf8mb4 coocker
+	docker compose exec db mysql -uhomechef -phomechef --default-character-set=utf8mb4 homechef
 
 token: ## Print the admin token
 	@grep ADMIN_TOKEN api/.env | cut -d= -f2

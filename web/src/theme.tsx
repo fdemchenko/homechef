@@ -2,7 +2,7 @@ import { createContext, ReactNode, useCallback, useContext, useEffect, useState 
 
 export type Theme = "light" | "dark" | "system";
 
-const KEY = "coocker-theme";
+const KEY = "homechef-theme";
 const prefersDark = () => window.matchMedia("(prefers-color-scheme: dark)").matches;
 
 function apply(theme: Theme) {

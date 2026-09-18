@@ -3,15 +3,15 @@ services:
     image: mysql:8.4
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: coocker
-      MYSQL_USER: coocker
-      MYSQL_PASSWORD: coocker
+      MYSQL_DATABASE: homechef
+      MYSQL_USER: homechef
+      MYSQL_PASSWORD: homechef
     ports:
       - "3306:3306"
     volumes:
       - mysql-data:/var/lib/mysql
     healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-ucoocker", "-pcoocker"]
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uhomechef", "-phomechef"]
       interval: 5s
       timeout: 5s
       retries: 20

@@ -2,7 +2,7 @@ import { createContext, ReactNode, useContext, useMemo, useState } from "react";
 
 import { RecipeDetail } from "./api";
 
-const KEY = "coocker-admin-token";
+const KEY = "homechef-admin-token";
 
 /** The token is kept in localStorage, so a reload keeps you logged in. */
 const stored = () => localStorage.getItem(KEY) ?? "";
